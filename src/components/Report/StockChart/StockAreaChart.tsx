@@ -77,7 +77,7 @@ export default function StockAreaChart({ allData }: Props) {
         </ResponsiveContainer>
       </div>
       {/* 기간 선택 라디오 버튼  */}
-      <div className="flex justify-center my-3  ">
+      <div className="flex justify-center my-auto">
         <PeriodRadioButton
           selectedPeriod={selectedPeriod}
           handleChange={handleChange}
