@@ -19,7 +19,7 @@ export default function ReportContainer({
   if (!stockInfo) return null;
   const { code } = stockInfo;
   return (
-    <div className=" w-[100%] mx-auto md:w-[600px]">
+    <div className=" w-[100%] mx-auto md:w-[600px] px-2">
       <div className="flex flex-col flex-wrap gap-2">
         <div className="p-2">
           <StockHeader stockInfo={stockInfo} />
