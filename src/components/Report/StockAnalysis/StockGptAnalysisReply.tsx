@@ -30,7 +30,7 @@ export default async function StockGptAnalysisReply({ stockInfo }: Props) {
         <BodyFont
           level="4"
           weight="regular"
-          className="leading-relaxed break-words"
+          className="leading-relaxed break-words whitespace-pre-line pr-1.5"
         >
           {data}
         </BodyFont>
