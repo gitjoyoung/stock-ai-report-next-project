@@ -5,6 +5,7 @@ import { StockInfo } from '../Report/type/report/stockType';
 import Link from 'next/link';
 import BodyFont from '@/common/Font/BodyFont';
 import { useRouter } from 'next/navigation';
+import { uuid } from 'uuidv4';
 
 export default function StockSearchBox() {
   const [search, setSearch] = useState('');
@@ -55,11 +56,11 @@ export default function StockSearchBox() {
       </form>
       <div className="mt-2">
         {filteredStocks.length > 0 ? (
-          filteredStocks.map((stock, index) => (
+          filteredStocks.map((stock) => (
             <Link
               className="flex p-2 border-b gap-1"
               href={`report/${stock.name}`}
-              key={index}
+              key={uuid()}
             >
               <BodyFont level="4" weight="regular">
                 {stock.name}

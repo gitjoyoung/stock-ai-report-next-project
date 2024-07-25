@@ -3,8 +3,9 @@ import StockSearchList from './StockSearchList';
 import BodyFont from '@/common/Font/BodyFont';
 import StockSearchBox from './StockSearchBox';
 import CardWrap from '@/common/CardWrap';
+import { mockStockDataList } from '@/constants/stockSearchMockData/mockStockDataList';
 
-export default function StockSearchContainer() {
+export default async function StockSearchContainer() {
   return (
     <div className=" w-full h-full justify-center flex flex-col items-center gap-4 px-1 ">
       <CardWrap
