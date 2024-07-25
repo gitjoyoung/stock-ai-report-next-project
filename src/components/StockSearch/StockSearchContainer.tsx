@@ -7,11 +7,11 @@ import { mockStockDataList } from '@/constants/stockSearchMockData/mockStockData
 
 export default async function StockSearchContainer() {
   return (
-    <div className=" w-full h-full justify-center flex flex-col items-center gap-4 px-1 ">
+    <div className="mx-auto max-w-[450px]  h-full justify-center flex flex-col items-center gap-4 px-1 ">
       <CardWrap
         bgColor="white"
         padding
-        className="flex flex-col items-center gap-2 p-5"
+        className="w-full flex flex-col items-center gap-2 p-5"
       >
         <BodyFont weight="bold" level="1">
           해외주식 검색하기
@@ -20,7 +20,7 @@ export default async function StockSearchContainer() {
           <StockSearchBox />
         </div>
       </CardWrap>
-      <div className=" max-w-[450px]  w-full mx-auto">
+      <div className="w-full mx-auto">
         <BodyFont weight="bold" level="3">
           인기 종목 검색 LIST
         </BodyFont>
