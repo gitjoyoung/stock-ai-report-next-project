@@ -33,24 +33,24 @@ export async function getLlamaReply({
     top_p: topP,
     stream: stream,
   };
-  const URL = process.env.LLAMA_REPLY_URL || "";
+  const URL = process.env.LLAMA_REPLY_URL || '';
 
   try {
     // let token = await gptTokenApi(); // 토큰을 인자로 받아 올 것인지 gpt 통신시 받아올 것인지 고민
     const response = await fetch(URL, {
-      method: "POST",
+      method: 'POST',
       headers: {
         Authorization: `Bearer ${token}`,
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
       },
       body: JSON.stringify(generateBody),
-      cache: "no-store",
+      cache: 'no-store',
     });
     if (response && response.body) {
       const reader = response.body.getReader(); // getReader를 사용하는 이유는 response.body가 스트림이기 때문에 스트림을 읽어오기 위해 사용
       // 스트림이란? 데이터를 조각조각 받아오는 것
 
-      let result = ""; // 스트림 데이터를 저장할 변수
+      let result = ''; // 스트림 데이터를 저장할 변수
       while (true) {
         const { done, value } = await reader.read(); // reader.read()는 데이터의 조각 즉 스트림을 비동기적으로 읽어옴
         // done 은 스트림이 끝났는지 아닌지를 나타내는 값, value는 스트림의 데이터를 나타냄
@@ -61,8 +61,8 @@ export async function getLlamaReply({
         result += new TextDecoder().decode(value); // 스트림 데이터를 누적하여 result에 저장
       }
     }
-    throw new Error("gptReplyApi 통신 에러");
+    throw new Error('gptReplyApi 통신 에러');
   } catch (error) {
-    throw new Error("gptReplyApi 통신 실패");
+    throw new Error('gptReplyApi 통신 실패');
   }
 }

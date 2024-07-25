@@ -1,4 +1,4 @@
-import { StockDetails } from "@/components/Report/type/report/stockType";
+import { StockDetails } from '@/components/Report/type/report/stockType';
 
 /**
  * 주식 시세 변동 정보를 가져오는 API
@@ -10,11 +10,11 @@ export const getStockDetails = async (
 ): Promise<StockDetails> => {
   const url = `https://polling.finance.naver.com/api/realtime/worldstock/stock/${ticker}`;
   const response = await fetch(url, {
-    method: "GET",
+    method: 'GET',
     headers: {
-      "Content-Type": "application/json",
+      'Content-Type': 'application/json',
     },
-    cache: "no-store",
+    cache: 'no-store',
   });
 
   const data = await response.json();
