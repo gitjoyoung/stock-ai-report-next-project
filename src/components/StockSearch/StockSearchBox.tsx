@@ -42,7 +42,7 @@ export default function StockSearchBox() {
       >
         <input
           type="text"
-          className="flex-grow p-2 focus:outline-none"
+          className=" p-2 focus:outline-none"
           placeholder="종목 이름을 입력하세요"
           value={search}
           onChange={handleChange}

@@ -16,7 +16,7 @@ export default async function StockSearchContainer() {
         <BodyFont weight="bold" level="1">
           해외주식 검색하기
         </BodyFont>
-        <div className="my-3">
+        <div className="my-3 mx-3">
           <StockSearchBox />
         </div>
       </CardWrap>
