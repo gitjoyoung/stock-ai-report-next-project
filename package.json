@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@date-io/dayjs": "^3.0.0",
+    "@types/uuid": "^10.0.0",
     "@vercel/speed-insights": "^1.0.12",
     "cheerio": "^1.0.0-rc.12",
     "class-variance-authority": "^0.7.0",
@@ -25,7 +26,7 @@
     "tailwindcss-animate": "^1.0.7",
     "timezone": "^1.0.23",
     "utc": "^0.1.0",
-    "uuidv4": "^6.2.13"
+    "uuid": "^10.0.0"
   },
   "devDependencies": {
     "@svgr/webpack": "^8.1.0",
