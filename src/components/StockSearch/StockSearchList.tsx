@@ -3,7 +3,7 @@ import StockLogoImage from '../Report/ReportCommon/StockLogoImage';
 import Link from 'next/link';
 import { mockStockDataList } from '@/constants/stockSearchMockData/mockStockDataList';
 import BodyFont from '@/common/Font/BodyFont';
-import { uuid } from 'uuidv4';
+import { v4 as uuid } from 'uuid';
 
 export default function StockSearchList() {
   return (

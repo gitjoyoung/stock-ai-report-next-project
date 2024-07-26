@@ -1,5 +1,6 @@
-import BodyFont from "@/common/Font/BodyFont";
-import { uuid } from "uuidv4";
+import BodyFont from '@/common/Font/BodyFont';
+import { v4 as uuid } from 'uuid';
+
 interface StockReportScores {
   subject: string;
   score: number;
@@ -12,13 +13,13 @@ interface Props {
 export default function StockReportList({ data }: Props) {
   const colorText = (score: number) =>
     score === 50 || score === 0
-      ? "text-gray-500"
+      ? 'text-gray-500'
       : score > 50
-      ? "text-red-600"
-      : "text-sky-600";
+      ? 'text-red-600'
+      : 'text-sky-600';
 
   const iconText = (score: number) =>
-    score === 50 || score === 0 ? "" : score > 50 ? "▲" : "▼";
+    score === 50 || score === 0 ? '' : score > 50 ? '▲' : '▼';
 
   const formatNumber = (num: number) => {
     return num % 1 === 0 ? num : num.toFixed(1);

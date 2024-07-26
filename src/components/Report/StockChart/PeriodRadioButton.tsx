@@ -1,7 +1,7 @@
 'use cleint';
 
 import BodyFont from '@/common/Font/BodyFont';
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 
 interface Props {
   selectedPeriod: string;
@@ -20,7 +20,7 @@ export default function PeriodRadioButton({
   return (
     <div className="flex w-full flex-col justify-between gap-0.5">
       {['1일', '3개월', '1년', '3년', '10년'].map((label) => (
-        <div key={uuid()}>
+        <div key={uuidv4()}>
           <input
             type="radio"
             id={label}
