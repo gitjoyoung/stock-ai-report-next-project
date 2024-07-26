@@ -25,11 +25,11 @@ export default function StockReportList({ data }: Props) {
     return num % 1 === 0 ? num : num.toFixed(1);
   };
   return (
-    <div className="flex flex-col w-[168px] h-[168px] justify-center rounded-2xl bg-[#F9F9F9] py-3 px-4">
+    <div className="flex flex-col w-full h-[168px] justify-center rounded-2xl bg-[#F9F9F9] py-3 px-4">
       {data &&
         data.map((item) => (
           <div
-            className="flex gap-3 justify-between m-1"
+            className="flex gap-2 justify-between m-1"
             key={uuid()}
             title={item.justification}
           >

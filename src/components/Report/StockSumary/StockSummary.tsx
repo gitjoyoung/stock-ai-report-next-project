@@ -52,8 +52,8 @@ export default async function StockSummary({ stockInfo }: Props) {
           changeRate={compareToPreviousClosePrice}
         />
         {/* 주식 설명 */}
-        <div className="  h-[125px] overflow-hidden hover:overflow-y-scroll  w-full ">
-          <div className="w-full border border-transparent hover:border-grayscale-400 p-1 break-words">
+        <div className=" w-full ">
+          <div className="w-full h-full  p-1 break-words">
             <BodyFont
               level="4"
               weight="regular"

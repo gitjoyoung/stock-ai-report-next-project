@@ -7,7 +7,7 @@ import { mockStockDataList } from '@/constants/stockSearchMockData/mockStockData
 
 export default async function StockSearchContainer() {
   return (
-    <div className="mx-auto max-w-[450px]  h-full justify-center flex flex-col items-center gap-4 px-1 ">
+    <div className="mx-auto max-w-[430px]  h-full justify-center flex flex-col items-center gap-4 px-1 ">
       <CardWrap
         bgColor="white"
         padding

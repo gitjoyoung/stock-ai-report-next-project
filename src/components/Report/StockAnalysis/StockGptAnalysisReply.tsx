@@ -25,12 +25,12 @@ export default async function StockGptAnalysisReply({ stockInfo }: Props) {
   const data = await getFetch.json();
 
   return (
-    <div className="overflow-hidden hover:overflow-y-scroll h-[180px] w-full">
-      <div className="w-full pr-1.5 border border-transparent hover:border-grayscale-400 p-1 ">
+    <div className="overflow-hidden  w-full">
+      <div className="w-full h-full ">
         <BodyFont
           level="4"
           weight="regular"
-          className="leading-relaxed break-words whitespace-pre-line pr-1.5"
+          className="leading-relaxed break-words whitespace-pre-line"
         >
           {data}
         </BodyFont>

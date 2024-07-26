@@ -34,7 +34,7 @@ export default async function StockAnalysis({
         <div className="space-y-4">
           {/* 타이틀 */}
 
-          <div className="flex items-center gap-2">
+          <div className="flex flex-wrap items-center gap-2">
             <div className="flex items-center gap-2">
               <StockLogoImage width={32} height={32} code={code} />
               <div className="flex gap-1">

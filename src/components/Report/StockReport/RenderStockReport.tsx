@@ -12,7 +12,7 @@ export const RenderStockReport = ({
       fullMark: 100,
     },
     {
-      subject: '투자지수',
+      subject: '투자',
       score: 0,
       fullMark: 100,
     },
@@ -39,8 +39,8 @@ export const RenderStockReport = ({
         {overallScore}점
       </HeadingFont>
     </div>
-    <div className="relative">
-      <div className="absolute left-0 w-[210px] h-[175px] z-10">
+    <div className="flex gap-2 flex-wrap items-center justify-center md:justify-between">
+      <div className=" w-[50%] md:w-[45%] h-[180px] z-10">
         <StockPolarChart
           dataKey="subject"
           valueKey="score"
@@ -49,7 +49,7 @@ export const RenderStockReport = ({
           viewAxis={true}
         />
       </div>
-      <div className="absolute right-0">
+      <div className="">
         <StockReportList data={scores} />
       </div>
     </div>
