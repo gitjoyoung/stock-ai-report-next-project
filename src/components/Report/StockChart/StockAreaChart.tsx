@@ -16,7 +16,7 @@ import { StockPrice } from '../type/report/stockType';
 type Period = '1일' | '3개월' | '1년' | '3년' | '10년';
 
 interface Props {
-  allData: {
+  chartPeriodData: {
     '1일': StockPrice[];
     '3개월': StockPrice[];
     '1년': StockPrice[];
@@ -27,28 +27,28 @@ interface Props {
 
 /**
  * 주식 area 차트 컴포넌트
- * @param {object} allData - 차트 데이터 (1일, 3개월, 1년, 3년, 10년)
+ * @param {object} chartPeriodData - 차트 데이터 (1일, 3개월, 1년, 3년, 10년)
  * @returns
  */
-export default function StockAreaChart({ allData }: Props) {
-  const [selectedPeriod, setSelectedPeriod] = useState<Period>('1일');
+export default function StockAreaChart({ chartPeriodData }: Props) {
+  const [selectedPeriod, setSelectedPeriod] = useState<Period>('3개월');
   const [selectedChartData, setSelectedChartData] = useState<StockPrice[]>(
-    allData['1일'],
+    chartPeriodData['1일'],
   );
 
   // 기간 변경 핸들러
   const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const period = event.target.value as Period;
-    const data = allData[period];
+    const data = chartPeriodData[period];
     setSelectedPeriod(period); // 선택된 기간 변경
     setSelectedChartData(data); // 차트 데이터 변경
   };
 
   return (
-    <div className="flex flex-row items-end w-full h-full">
+    <div className="flex flex-row gap-1 items-start w-full h-full">
       {/* area 차트 */}
-      <div className="flex flex-col justify-end w-full h-48 md:h-56">
-        <ResponsiveContainer width="100%" height="100%">
+      <div className=" w-full h-48 md:h-56">
+        <ResponsiveContainer width="100%" height="95%">
           <AreaChart data={selectedChartData}>
             <Tooltip />
             <defs>
@@ -77,7 +77,7 @@ export default function StockAreaChart({ allData }: Props) {
         </ResponsiveContainer>
       </div>
       {/* 기간 선택 라디오 버튼  */}
-      <div className="flex justify-center my-auto">
+      <div className="flex ">
         <PeriodRadioButton
           selectedPeriod={selectedPeriod}
           handleChange={handleChange}

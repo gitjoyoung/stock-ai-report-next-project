@@ -15,7 +15,6 @@ export default function PeriodRadioButton({
   const unselectedStyle = 'bg-white text-gray-500';
   const selectedStyle = 'bg-primary-50 text-black';
 
-  // 최종 클래스 이름
   const buttonClassName = `w-[64px] h-full rounded-lg  block py-2 cursor-pointer text-center hover:bg-primary-900 hover:text-white `;
   return (
     <div className="flex w-full flex-col justify-between gap-0.5">

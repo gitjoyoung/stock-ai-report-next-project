@@ -7,7 +7,7 @@ interface Props {
 }
 export default function StockChartContainer({ code }: Props) {
   return (
-    <div className=" w-full h-full">
+    <article className="w-full h-[200px] ">
       {/* 타이틀 */}
       <BodyFont level="1" weight="bold">
         주가 차트
@@ -15,13 +15,13 @@ export default function StockChartContainer({ code }: Props) {
       {/* 차트 */}
       <Suspense
         fallback={
-          <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+          <div className="h-full w-full flex flex-col justify-center items-center">
             <StockSuspenseLoading />
           </div>
         }
       >
         <StockChartLoader code={code} />
       </Suspense>
-    </div>
+    </article>
   );
 }

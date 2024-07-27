@@ -1,20 +1,18 @@
 import BodyFont from '@/common/Font/BodyFont';
 import dynamic from 'next/dynamic';
+import StockSuspenseLoading from '../ReportCommon/SuspenseLoading';
 
 const StockAreaChart = dynamic(() => import('../StockChart/StockAreaChart'), {
   ssr: false,
   loading: () => (
-    <div className="flex flex-col  justify-center h-full items-center">
-      <BodyFont level="5" weight="medium">
-        통신 완료 차트 불러오는 중...
-      </BodyFont>
+    <div className="h-full w-full flex flex-col justify-center items-center">
+      <StockSuspenseLoading />
     </div>
   ),
 });
 interface Props {
   code: string | undefined;
 }
-// 주식 차트 컴포넌트
 export default async function StockChartLoader({ code }: Props) {
   if (!code) return null;
   const fetchData = await fetch(
@@ -28,7 +26,7 @@ export default async function StockChartLoader({ code }: Props) {
       cache: 'no-store',
     },
   );
-  const allData = await fetchData.json();
+  const chartPeriodData = await fetchData.json();
 
-  return <StockAreaChart allData={allData} />;
+  return <StockAreaChart chartPeriodData={chartPeriodData} />;
 }
