@@ -24,18 +24,17 @@ export default function ReportContainer({
         <div className="p-2">
           <StockHeader stockInfo={stockInfo} />
         </div>
-        {/* 첫번째 줄 */}
         <div className="space-y-3 w-full ">
-          <CardWrap width="100%" height="100%" className="p-4 md:p-6">
+          <CardWrap width="100%" height="100%" className="p-4 md:p-6 min-h-72">
             <StockSumaryContainer stockInfo={stockInfo} />
           </CardWrap>
-          <CardWrap width="100%" height="100%" className="p-4 md:p-6">
+          <CardWrap width="100%" height="100%" className="p-4 md:p-6 min-h-72">
             <StockChartContainer code={code} />
           </CardWrap>
-          <CardWrap width="100%" height="100%" className="p-4 md:p-6">
+          <CardWrap width="100%" height="100%" className="p-4 md:p-6 min-h-72">
             <StockReportContainer code={code} />
           </CardWrap>
-          <CardWrap width="100%" height="100%" className="p-4 md:p-6">
+          <CardWrap width="100%" height="100%" className="p-4 md:p-6 min-h-72">
             <StockAnalysis stockInfo={stockInfo} />
           </CardWrap>
         </div>
