@@ -25,16 +25,14 @@ export default async function StockGptAnalysisReply({ stockInfo }: Props) {
   const data = await getFetch.json();
 
   return (
-    <div className="overflow-hidden  w-full">
-      <div className="w-full h-full ">
-        <BodyFont
-          level="4"
-          weight="regular"
-          className="leading-relaxed break-words whitespace-pre-line"
-        >
-          {data}
-        </BodyFont>
-      </div>
+    <div className="h-full w-full">
+      <BodyFont
+        level="4"
+        weight="regular"
+        className="leading-relaxed break-words whitespace-pre-line"
+      >
+        {data}
+      </BodyFont>
     </div>
   );
 }
