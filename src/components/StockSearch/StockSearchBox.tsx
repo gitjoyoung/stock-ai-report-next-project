@@ -1,6 +1,6 @@
 'use client';
 import { mockStockDataList } from '@/constants/stockSearchMockData/mockStockDataList';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useTransition } from 'react';
 import { StockInfo } from '../Report/type/report/stockType';
 import Link from 'next/link';
 import BodyFont from '@/common/Font/BodyFont';
@@ -10,20 +10,25 @@ import { v4 as uuidv4 } from 'uuid';
 export default function StockSearchBox() {
   const [search, setSearch] = useState('');
   const [filteredStocks, setFilteredStocks] = useState<StockInfo[]>([]);
+  const [isPending, setIsPending] = useTransition();
   const { push } = useRouter();
+  const [stockList, setStockList] = useState<StockInfo[]>([]);
+
   useEffect(() => {
-    if (search === '') {
-      setFilteredStocks([]);
-    } else {
-      const results = mockStockDataList.filter((stock) =>
-        stock.name.includes(search),
-      );
-      setFilteredStocks(results);
-    }
-  }, [search]);
+    setStockList(mockStockDataList);
+  }, []); // 이후 통신함수로 변경
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setSearch(e.target.value.toUpperCase());
+    const { value } = e.target;
+    setSearch(value.toUpperCase());
+    setIsPending(() => {
+      if (value === '') {
+        setFilteredStocks([]);
+      } else {
+        const results = stockList.filter((stock) => stock.name.includes(value));
+        setFilteredStocks(results);
+      }
+    });
   };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
